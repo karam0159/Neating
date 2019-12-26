@@ -1,0 +1,199 @@
+#QnA {
+  max-width: 1880px;
+  margin: 0 auto; }
+  #QnA .QnABody {
+    width: 90%;
+    margin-left: 5%; }
+    #QnA .QnABody .QnABox {
+      margin-top: 50px; }
+      #QnA .QnABody .QnABox .box {
+        position: relative;
+        float: left;
+        width: 23.5%;
+        height: 400px;
+        background-color: #585858;
+        margin-top: 1.5%;
+        margin-right: 1.5%;
+        transition: transform 0.2s;
+        cursor: pointer; }
+        #QnA .QnABody .QnABox .box p {
+          color: white;
+          width: 90%;
+          margin: 5% 0px 0px 5%;
+          word-break: keep-all; }
+        #QnA .QnABody .QnABox .box p:nth-of-type(1) {
+          width: 80px;
+          height: 15px;
+          line-height: 15px;
+          text-align: center;
+          border: 1px solid white; }
+        #QnA .QnABody .QnABox .box p:nth-of-type(2) {
+          width: 90%;
+          height: 310px;
+          font-size: 24px; }
+        #QnA .QnABody .QnABox .box p:nth-of-type(3) {
+          position: absolute;
+          bottom: 10px;
+          font-size: 17px; }
+      #QnA .QnABody .QnABox .box:nth-of-type(n4) {
+        margin-right: 0; }
+  #QnA .page {
+    clear: both;
+    width: 100%;
+    margin-top: 70px;
+    margin-bottom: 100px;
+    float: left; }
+    #QnA .page .paging {
+      text-align: center; }
+      #QnA .page .paging ul li {
+        display: inline-block; }
+        #QnA .page .paging ul li a {
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          border: 1px solid #bbbbbb;
+          border-right: 0;
+          line-height: 30px;
+          font-size: 18px;
+          cursor: pointer; }
+        #QnA .page .paging ul li a:hover {
+          background-color: #f1f1f1;
+          transition: background-color 0.2s; }
+        #QnA .page .paging ul li .on {
+          background-color: gray;
+          color: white; }
+        #QnA .page .paging ul li .on:hover {
+          background-color: gray;
+          color: white; }
+      #QnA .page .paging ul li:nth-last-child(1) a {
+        border-right: 1px solid #bbbbbb; }
+  @media (max-width: 1024px) {
+    #QnA .QnABody {
+      width: 96%;
+      margin-left: 2%; }
+      #QnA .QnABody .QnABox .box {
+        width: 47.5%;
+        height: 420px;
+        margin: 2.5% 2.5% 0px 0px; }
+      #QnA .QnABody .QnABox .box:nth-of-type(2n) {
+        margin-right: 0; } }
+
+/* QnAView */
+#QnAView {
+  width: 100%;
+  padding-bottom: 120px;
+  background-color: #f1f1f1; }
+  #QnAView .QnAViewBox {
+    position: relative;
+    max-width: 1880px;
+    margin: 0 auto;
+    height: auto; }
+    #QnAView .QnAViewBox > img {
+      position: relative;
+      z-index: 0;
+      width: 100%;
+      height: 370px; }
+    #QnAView .QnAViewBox .circle {
+      position: absolute;
+      z-index: 1;
+      display: inline-block;
+      width: 120px;
+      height: 120px;
+      top: 260px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: white;
+      border-radius: 80px 80px 80px 80px; }
+    #QnAView .QnAViewBox .QnAViewBody {
+      position: relative;
+      z-index: 1;
+      width: 70%;
+      height: auto;
+      margin-top: -60px;
+      left: 15%;
+      padding-bottom: 120px;
+      background-color: white; }
+      #QnAView .QnAViewBox .QnAViewBody .QnAViewBodyTop {
+        width: 84%;
+        margin-left: 8%;
+        padding-top: 60px;
+        border-bottom: 3px solid #333333; }
+        #QnAView .QnAViewBox .QnAViewBody .QnAViewBodyTop > p {
+          font-size: 28px;
+          color: #333333; }
+        #QnAView .QnAViewBox .QnAViewBody .QnAViewBodyTop > span {
+          display: inline-block;
+          margin-top: 25px;
+          margin-bottom: 22px; }
+        #QnAView .QnAViewBox .QnAViewBody .QnAViewBodyTop span:nth-of-type(1) {
+          width: 100px;
+          height: 25px;
+          line-height: 25px;
+          text-align: center;
+          border: 1px solid #333333; }
+        #QnAView .QnAViewBox .QnAViewBody .QnAViewBodyTop span:nth-of-type(2) {
+          color: #424242;
+          font-size: 15px; }
+        #QnAView .QnAViewBox .QnAViewBody .QnAViewBodyTop .QnAViewBodyTopRight {
+          float: right; }
+          #QnAView .QnAViewBox .QnAViewBody .QnAViewBodyTop .QnAViewBodyTopRight a {
+            float: right;
+            margin: 25px 10px 0px 0px;
+            height: 31px;
+            line-height: 31px;
+            font-size: 35px; }
+          #QnAView .QnAViewBox .QnAViewBody .QnAViewBodyTop .QnAViewBodyTopRight a:nth-of-type(1) {
+            float: right;
+            width: 100px;
+            height: 31px;
+            line-height: 31px;
+            text-align: center;
+            font-size: 17px;
+            border: 2px solid #333333;
+            color: #333333;
+            border-radius: 30px 30px 30px 30px;
+            transition: background-color 0.5s, color 0.5s; }
+          #QnAView .QnAViewBox .QnAViewBody .QnAViewBodyTop .QnAViewBodyTopRight a:nth-of-type(1):hover {
+            background-color: #333333;
+            color: white; }
+      #QnAView .QnAViewBox .QnAViewBody .QnAViewBodyBottom {
+        width: 84%;
+        margin-left: 8%;
+        padding-top: 50px; }
+        #QnAView .QnAViewBox .QnAViewBody .QnAViewBodyBottom > p {
+          width: 98%;
+          margin-left: 1%;
+          font-size: 18px;
+          line-height: 20px;
+          word-break: keep-all; }
+    #QnAView .QnAViewBox > a {
+      position: relative;
+      display: inline-block;
+      width: 120px;
+      height: 40px;
+      bottom: 20px;
+      margin-top: 50px;
+      left: 50%;
+      text-align: center;
+      transform: translateX(-50%);
+      background-color: #333333;
+      color: white;
+      font-size: 16px;
+      line-height: 40px;
+      border-radius: 50px 50px 50px 50px;
+      transition: transform ease 0.5s; }
+    #QnAView .QnAViewBox > a:hover {
+      transform: translateX(-50%) scale(1.1); }
+
+@media (max-width: 1024px) {
+  #QnAView .QnAViewBox .QnAViewBody {
+    width: 94%;
+    left: 3%; }
+    #QnAView .QnAViewBox .QnAViewBody .QnAViewBodyTop .QnAViewBodyTopRight {
+      clear: both;
+      float: right; }
+      #QnAView .QnAViewBox .QnAViewBody .QnAViewBodyTop .QnAViewBodyTopRight > a:nth-of-type(1) {
+        clear: both;
+        float: right; }
+    #QnAView .QnAViewBox .QnAViewBody .QnAViewBodyBottom {
+      margin-top: 30px; } }

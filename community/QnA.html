@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        $(document).ready(function() {
+            var kind = ["QnA", "QnA", "QnA", "QnA", "QnA", "REVIEW", "NOTICE", "NOTICE"];
+            var title = ["구매했는데 언제쯤 배송이 시작될까요?", "환불 조건이 무엇인지 궁금합니다.", "재고 없는 제품은 언제쯤 구입가능할까요?", "해외로 배송이 가능한가요?", "적립금은 얼마나 들어오나요?", "신상품 리뷰합니다.", "신규 회원 이벤트", "댓글왕 이벤트"];
+            var date = ["2019.12.12", "2019.12.12", "2019.12.11", "2019.12.11", "2019.12.11", "2019.12.11",
+                "2019.12.10", "2019.12.10"
+            ];
+            var link = ["index.html?page=community/QnAView.html","#","#","#","#","#","#","#"];
+            var qna = "";
+            for (var i = 0; i < 8; i++) {
+                qna = "<div class='box' onclick=location.href='" + link[i] +"'>";
+                qna += "<p>" + kind[i] + "</p>";
+                qna += "<p>" + title[i] + "</p>";
+                qna += "<p>" + date[i] + "</p>";
+                qna += "</div>";
+
+                $(".QnABox").append(qna);
+            }
+
+            var startPage = 1;
+            var endPage = 7;
+            var nowPage = 1;
+            var page = "";
+
+            page = "<div class='page'>";
+            page += "<div class='paging'>";
+            page += "<ul>";
+            page += "<li><a><i class='fas fa-angle-left'></i></a></li>";
+            for (i = startPage; i <= endPage; i++) {
+                if (i == nowPage) {
+                    page += "<li>";
+                    page += "<a class='on'>" + i + "</a>";
+                    page += "</li>";
+                } else {
+                    page += "<li>";
+                    page += "<a>" + i + "</a>";
+                    page += "</li>";
+                }
+            }
+            page += "<li><a><i class='fas fa-angle-right'></i></a></li>";
+            page += "</ul>";
+            page += "</div>";
+            page += "</div>";
+
+            $("#QnA").append(page);
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="QnA">
+        <div class="QnABody">
+            <div class="QnABox">
+
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function() {
+        $(".box").hover(function() {
+            $(this).css("transform","scale(1.07)");
+            $(this).css("box-shadow","0px 0px 10px gray");
+        },function(){
+            $(this).css("transform","scale(1)");
+            $(this).css("box-shadow","0px 0px 0px");
+        });
+    });
+
+</script>
+
+</html>

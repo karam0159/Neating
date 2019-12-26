@@ -1,0 +1,161 @@
+.backgroundImage {
+  position: absolute;
+  top: 71px;
+  background-image: url("../image/window1.jpg");
+  background-size: cover;
+  width: 100%;
+  height: calc(100% - 71px);
+  height: -o-calc(100% - 71px);
+  /* opera */
+  height: -webkit-calc(100% - 71px);
+  /* google, safari */
+  height: -moz-calc(100% - 71px);
+  /* firefox */
+  opacity: 0.2; }
+
+.wrapper .loginDiv {
+  position: absolute;
+  z-index: 2;
+  top: 35%;
+  width: 380px;
+  height: 220px;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%); }
+  .wrapper .loginDiv p {
+    color: black;
+    font-size: 24px;
+    width: 100%;
+    text-align: center;
+    margin: 0; }
+  .wrapper .loginDiv .loginBox {
+    width: 380px;
+    height: 190px;
+    background-color: #585858;
+    border-radius: 5px 5px 5px 5px; }
+    .wrapper .loginDiv .loginBox form {
+      margin-top: 5px; }
+      .wrapper .loginDiv .loginBox form input {
+        float: left;
+        width: 60%;
+        height: 35px;
+        margin-top: 10px;
+        padding-left: 1%;
+        margin-left: -1px;
+        box-sizing: border-box;
+        border-radius: 0px 5px 5px 0px;
+        border: 0;
+        font-size: 14px; }
+      .wrapper .loginDiv .loginBox form input:nth-of-type(1) {
+        margin-top: 34px; }
+      .wrapper .loginDiv .loginBox form input[type="submit"] {
+        width: calc(60% + 35px);
+        width: -o-calc(60% + 35px);
+        /* opera */
+        width: -webkit-calc(60% + 35px);
+        /* google, safari */
+        width: -moz-calc(60% + 35px);
+        /* firefox */
+        background-color: black;
+        color: white;
+        margin-left: 16%;
+        border-radius: 5px 5px 5px 5px; }
+      .wrapper .loginDiv .loginBox form img {
+        float: left;
+        margin-left: 16%;
+        margin-top: 10px;
+        width: 35px;
+        height: 35px;
+        border-radius: 5px 0px 0px 5px; }
+      .wrapper .loginDiv .loginBox form img:nth-of-type(1) {
+        margin-top: 34px; }
+  .wrapper .loginDiv p:nth-of-type(2) {
+    float: left;
+    width: 180px;
+    margin-top: 3px;
+    font-size: 18px;
+    margin-left: 60px;
+    margin-bottom: 5px; }
+  .wrapper .loginDiv a {
+    display: inline-block;
+    margin-top: 3px;
+    float: left;
+    font-size: 18px;
+    text-decoration: underline; }
+  .wrapper .loginDiv a:nth-of-type(2) {
+    margin-left: 95px;
+    font-size: 16px;
+    margin-right: 5px; }
+  .wrapper .loginDiv a:nth-of-type(3) {
+    font-size: 16px; }
+
+.wrapper .member_signUp {
+  max-width: 1880px;
+  margin: 0 auto; }
+  .wrapper .member_signUp > p {
+    display: inline-block;
+    margin-top: 60px;
+    width: 100%;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold; }
+  .wrapper .member_signUp form {
+    width: 50%;
+    margin-top: 50px;
+    margin-left: 25%; }
+    .wrapper .member_signUp form div {
+      float: right;
+      margin-top: 30px;
+      font-size: 16px;
+      color: red; }
+    .wrapper .member_signUp form a {
+      float: left;
+      margin-top: 15px;
+      font-size: 29px; }
+    .wrapper .member_signUp form span {
+      margin-top: 25px;
+      float: left; }
+    .wrapper .member_signUp form input {
+      width: 100%;
+      height: 50px;
+      font-size: 22px;
+      box-sizing: border-box;
+      padding-left: 1%; }
+    .wrapper .member_signUp form input[type="submit"] {
+      margin-top: 30px;
+      margin-bottom: 60px;
+      background-color: white;
+      border: 1px solid black;
+      transition: background-color 0.5s, color 0.5s; }
+    .wrapper .member_signUp form input[type="submit"]:hover {
+      background-color: black;
+      color: white; }
+
+@media (max-width: 1225px) {
+  .wrapper .member_signUp form div {
+    clear: both;
+    float: left;
+    margin-top: 0; } }
+
+@media (max-width: 1024px) {
+  .wrapper .member_signUp form {
+    width: 90%;
+    margin-left: 5%; }
+    .wrapper .member_signUp form div {
+      clear: both;
+      float: left;
+      margin-top: 0; } }
+
+@media (max-width: 500px) {
+  .wrapper .member_signUp form .passCheckSpan {
+    clear: both;
+    float: left;
+    margin-top: 0; } }
+
+@media (max-width: 270px) {
+  .wrapper .member_signUp form .passCheckSpan,
+  .wrapper .member_signUp form .passSpan,
+  .wrapper .member_signUp form .addressSpan {
+    clear: both;
+    float: left;
+    margin-top: 0; } }

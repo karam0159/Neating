@@ -1,0 +1,170 @@
+@charset "UTF-8";
+.wrapper {
+  width: 100%; }
+  .wrapper .header .headerNavDiv .headerNavDiv_p {
+    max-width: 1440px;
+    margin: 0 auto; }
+    .wrapper .header .headerNavDiv .headerNavDiv_p > a > img {
+      float: left;
+      width: 60px;
+      height: 60px;
+      margin-top: 5px;
+      margin-left: 10%; }
+    .wrapper .header .headerNavDiv .headerNavDiv_p .headerNav {
+      position: relative;
+      z-index: 6;
+      float: left;
+      height: 70px;
+      margin: 0px 0px 0px 25px; }
+      .wrapper .header .headerNavDiv .headerNavDiv_p .headerNav > li {
+        float: left;
+        margin-right: 25px; }
+        .wrapper .header .headerNavDiv .headerNavDiv_p .headerNav > li a {
+          line-height: 70px;
+          font-size: 21px; }
+    .wrapper .header .headerNavDiv .headerNavDiv_p > ul {
+      float: right;
+      margin: 25px 4% 0px 0px; }
+      .wrapper .header .headerNavDiv .headerNavDiv_p > ul li {
+        float: left;
+        margin-right: 5px; }
+        .wrapper .header .headerNavDiv .headerNavDiv_p > ul li a {
+          font-size: 21px; }
+          .wrapper .header .headerNavDiv .headerNavDiv_p > ul li a img {
+            margin-top: -10px;
+            width: 45px;
+            height: 45px; }
+      .wrapper .header .headerNavDiv .headerNavDiv_p > ul .mobileMenu {
+        display: none; }
+  .wrapper .header .headerNavDiv .slideDownMenu > .slideDown {
+    position: absolute;
+    z-index: 7;
+    top: 70px;
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+    background-color: white;
+    transition: border-bottom 0.5s; }
+    .wrapper .header .headerNavDiv .slideDownMenu > .slideDown .slideDown_p {
+      max-width: 1440px;
+      margin: 0 auto; }
+      .wrapper .header .headerNavDiv .slideDownMenu > .slideDown .slideDown_p ul:nth-of-type(1) {
+        margin-left: 13%; }
+      .wrapper .header .headerNavDiv .slideDownMenu > .slideDown .slideDown_p > ul {
+        margin-top: 30px;
+        width: 15%;
+        float: left; }
+        .wrapper .header .headerNavDiv .slideDownMenu > .slideDown .slideDown_p > ul > a {
+          font-size: 24px;
+          float: left;
+          margin-bottom: 20px; }
+        .wrapper .header .headerNavDiv .slideDownMenu > .slideDown .slideDown_p > ul > li {
+          clear: both;
+          float: left;
+          margin-top: 10px; }
+          .wrapper .header .headerNavDiv .slideDownMenu > .slideDown .slideDown_p > ul > li a {
+            font-size: 20px; }
+          .wrapper .header .headerNavDiv .slideDownMenu > .slideDown .slideDown_p > ul > li a:hover {
+            text-decoration: underline; }
+  .wrapper .header .searchBox {
+    position: absolute;
+    z-index: 3;
+    top: 70px;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    background-color: white; }
+    .wrapper .header .searchBox form {
+      position: absolute;
+      width: 500px;
+      top: 70px;
+      left: 50%;
+      transform: translateX(-50%); }
+      .wrapper .header .searchBox form input[type="search"] {
+        float: left;
+        width: 450px;
+        height: 50px;
+        border: 1px solid grey;
+        box-sizing: border-box;
+        border-right: 0;
+        font-size: 20px; }
+      .wrapper .header .searchBox form input[type="image"] {
+        float: left;
+        border: 1px solid grey;
+        box-sizing: border-box;
+        border-left: 0;
+        padding: 5px; }
+    .wrapper .header .searchBox ul {
+      position: absolute;
+      width: 500px;
+      top: 140px;
+      left: 50%;
+      transform: translateX(-50%); }
+      .wrapper .header .searchBox ul li {
+        margin-top: 13px; }
+        .wrapper .header .searchBox ul li a {
+          font-size: 18px; }
+        .wrapper .header .searchBox ul li a:hover {
+          text-decoration: underline; }
+
+@media (max-width: 1024px) {
+  .wrapper {
+    width: 100%; }
+    .wrapper .header {
+      height: 71px; }
+      .wrapper .header .headerNavDiv .headerNavDiv_p {
+        max-width: 100%; }
+        .wrapper .header .headerNavDiv .headerNavDiv_p > a > img {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          margin-left: 0; }
+        .wrapper .header .headerNavDiv .headerNavDiv_p > ul:nth-of-type(1) {
+          display: none; }
+        .wrapper .header .headerNavDiv .headerNavDiv_p > ul:nth-of-type(2) {
+          float: left;
+          margin: 0;
+          margin-top: 25px; }
+          .wrapper .header .headerNavDiv .headerNavDiv_p > ul:nth-of-type(2) li:nth-of-type(1) {
+            display: none; }
+          .wrapper .header .headerNavDiv .headerNavDiv_p > ul:nth-of-type(2) li:nth-of-type(2) {
+            position: absolute;
+            left: 7%;
+            transform: translateX(-50%);
+            margin-left: 0; }
+            .wrapper .header .headerNavDiv .headerNavDiv_p > ul:nth-of-type(2) li:nth-of-type(2) img {
+              width: 40px;
+              height: 40px; }
+          .wrapper .header .headerNavDiv .headerNavDiv_p > ul:nth-of-type(2) .mobileMenu {
+            display: inline-block;
+            position: absolute;
+            right: 7%;
+            margin: 0;
+            transform: translateX(50%); }
+      .wrapper .header .slideDownMenu {
+        display: none; }
+      .wrapper .header .searchBox form {
+        width: 100%;
+        left: 0;
+        transform: translateX(0); }
+        .wrapper .header .searchBox form input[type="search"] {
+          width: 65%;
+          /* 구식 브라우저를 위한 대비책(fallback) */
+          width: -webkit-calc(90% - 50px);
+          /* for Chrome, Safari */
+          width: -moz-calc(90% - 50px);
+          /* for Firefox */
+          width: calc(90% - 50px);
+          /* for IE */
+          margin-left: 5%; }
+        .wrapper .header .searchBox form input[type="image"] {
+          float: left;
+          border: 1px solid grey;
+          box-sizing: border-box;
+          border-left: 0;
+          padding: 5px; }
+      .wrapper .header .searchBox ul {
+        width: 90%;
+        margin-left: 5%;
+        left: 0;
+        transform: translateX(0); } }

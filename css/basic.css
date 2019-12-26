@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+a
+{
+	font-family:  'Roboto','Noto Sans KR','Open Sans',나눔고딕, 'NanumBarunGothic', 'serif';
+	
+}
+
+*:focus 
+{
+	outline: none;		/* text클릭시 파란테두리 제거 */
+}
+
+html ,body
+{
+	font-family: 'Roboto','Noto Sans KR','Open Sans', 나눔고딕,'NanumBarunGothic', 'serif';	
+	margin:0;
+}
+
+.wrapper
+{
+	width:100%;
+	margin:0 auto;
+	padding:0;
+	font-family: 'Roboto','Noto Sans KR','Open Sans', 나눔고딕,'NanumBarunGothic', 'serif';	
+}
+
+

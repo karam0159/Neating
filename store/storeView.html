@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<!--    <script src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>-->
+</head>
+
+<body>
+    <div id="storeView">
+        <div class="storeViewTop">
+            <div class="storeViewTopLeft">
+                <img src="../image/store/storeImage/2/1.jpg" alt="상품 이미지" />
+            </div>
+            <div class="storeViewTopRight">
+                <form action="#" method="post">
+                    <p>가성비 좋은 깔끔 남성용 셔츠</p>
+                    <p>판매가</p><span>₩34000원</span>
+                    <p>할인판매가</p><span>₩32300원</span>
+                    <p>적립금</p><span>323원</span>
+                    <p>사이즈</p><span>FREE SIZE 90~105</span>
+                    <p>국내/해외 배송지</p>
+                    <label for="kor">국내</label><input type="radio" id="kor" value="국내" name="delveryCountry">
+                    <label for="other">해외</label><input type="radio" id="other" value="해외" name="delveryCountry">
+                    <span class="border"></span>
+                    <select class="sizeSelect">
+                        <option disabled selected>사이즈 선택</option>
+                        <option value="90">사이즈 90</option>
+                        <option value="95">사이즈 95</option>
+                        <option value="100">사이즈 100</option>
+                        <option value="105">사이즈 105</option>
+                    </select>
+                    <div class="sizeTable">
+                        <div class="th">
+                            <div class="tr">사이즈</div>
+                            <div class="tr">갯수</div>
+                            <div class="tr">가격</div>
+                        </div>
+                        <div class="th selected">
+
+                        </div>
+                    </div>
+                    <div class="buyBox">
+                        <input type="submit" value="구매하기" class="submitButton" />
+                        <span>원</span>
+                        <input type="text" value="0" class="allPrice" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function() {
+            // 사이즈 선택시 div추가 select value로 사이즈를 가져와서 해당 div생성
+            // 생성시 class나 onclick 메소드의 인자값을 받아온 value로 설정하여
+            // 이후 사용시 value값을 이용해 동적 컨트롤 가능
+            var size = [];
+            var sizeTd = "";
+            // 값 선택시 실행
+            $(".sizeSelect").change(function() {
+                var price = 32300;
+                var nowPrice = parseInt($(".allPrice").val());
+                var sizeValue = $(".sizeSelect").val();
+                //                var price = 0;
+                //                if (sizeValue == 90) {
+                //                    price = 31000;
+                //                }
+                // 이미 선택된 값인지 확인
+                var isExist = (size.indexOf(sizeValue) !== -1);
+                // 선택된적 없는 값이라면 실행
+                if (isExist == false) {
+                    // 배열에 삽입
+                    size.push(sizeValue);
+                    sizeTd = "<div class='tdBox box" + sizeValue + "'>";
+                    sizeTd += "<input type='hidden' value='" + price + "' class='origin" + sizeValue + "'/>";
+                    sizeTd += "<div class='td'>SIZE " + sizeValue + "</div>";
+                    sizeTd += "<div class='td'><input type='number' name='count'";
+                    sizeTd += "class='count" + sizeValue + "' value='1' ";
+                    sizeTd += "onchange=countUpdate('" + sizeValue + "') /></div>";
+                    sizeTd += "<div class='td'>";
+                    sizeTd += "<input type='number' readonly ";
+                    sizeTd += "value='" + price + "' name='price' class='price" + sizeValue + "'/>";
+                    sizeTd += "<a onclick=remove('" + sizeValue + "')>X</a>";
+                    sizeTd += "</div>";
+                    sizeTd += "</div>";
+
+                    $(".selected").append(sizeTd);
+                }
+                $(".allPrice").val(nowPrice + price);
+            });
+
+        });
+        // 갯수추가 /원리 = 1.현재 총 가격 가져옴 2.기존 해당가격 가져옴 3.현재 해당가격 가져옴 
+        //4.총가격에서 기존가격빼고 현재가격더함
+        function countUpdate(sizeValue) {
+
+            var AllPrice = parseInt($(".allPrice").val());
+            var nowPrice = parseInt($(".price" + sizeValue).val());
+            var minusPrice = AllPrice - nowPrice;
+
+            var origin = document.getElementsByClassName("origin" + sizeValue)[0].value;
+            var price = document.getElementsByClassName("price" + sizeValue)[0];
+            var count = document.getElementsByClassName("count" + sizeValue)[0].value;
+            if (count < 0 || count == "") {
+                alert("0이하로는 구입 하실 수 없습니다.");
+                $(".count" + sizeValue).val(0);
+                $(".price" + sizeValue).val(0);
+                var backPrice = parseInt($(".price" + sizeValue).val());
+                $(".allPrice").val(minusPrice + backPrice);
+            } else {
+                price.value = parseInt(origin * count);
+                var backPrice = parseInt($(".price" + sizeValue).val());
+
+                for (var i = 0; i < 5; i++) {
+
+                    //                var price_i += $("[class^=price]").val();
+                    //                allPrice += price_i;
+                }
+
+                $(".allPrice").val(minusPrice + backPrice);
+            }
+        }
+        // 제거 /원리 = 1.현재 총 가격 가져옴 2.기존 해당가격 가져옴 3.현재 해당가격 가져옴 
+        //4.총가격에서 기존가격빼고 현재가격더함
+        function remove(sizeValue) {
+            var removeBox = $(".box" + sizeValue);
+            var AllPrice = parseInt($(".allPrice").val());
+            var nowPrice = parseInt($(".price" + sizeValue).val());
+            var minusPrice = AllPrice - nowPrice;
+            $(".count" + sizeValue).val(0);
+            $(".price" + sizeValue).val(0);
+            var backPrice = parseInt($(".price" + sizeValue).val());
+            $(".allPrice").val(minusPrice + backPrice);
+            removeBox.remove();
+        }
+
+    </script>
+</body>
+
+</html>

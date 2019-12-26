@@ -1,0 +1,234 @@
+@charset "UTF-8";
+#store {
+  max-width: 1880px;
+  margin: 0 auto; }
+  #store > img {
+    width: 100%;
+    height: 600px; }
+  #store .storeMain {
+    width: 90%;
+    margin-left: 5%; }
+    #store .storeMain .storeBox {
+      position: relative;
+      float: left;
+      width: 24%;
+      height: 550px;
+      margin: 20px 1% 0px 0px;
+      cursor: pointer;
+      overflow: hidden; }
+      #store .storeMain .storeBox img {
+        width: 100%;
+        height: 400px; }
+      #store .storeMain .storeBox a {
+        display: inline-block;
+        width: 100%;
+        border-bottom: 1px solid #bbbbbb;
+        height: 44px;
+        font-size: 15px;
+        text-align: left; }
+      #store .storeMain .storeBox p {
+        width: 100%;
+        margin-top: 2px;
+        text-align: left; }
+        #store .storeMain .storeBox p > span {
+          text-decoration: line-through; }
+      #store .storeMain .storeBox p:nth-of-type(1),
+      #store .storeMain .storeBox p:nth-of-type(2) {
+        font-size: 14px;
+        color: gray; }
+      #store .storeMain .storeBox p:nth-of-type(2) {
+        color: red; }
+      #store .storeMain .storeBox p:nth-of-type(3) {
+        color: #585858; }
+      #store .storeMain .storeBox p:nth-of-type(3),
+      #store .storeMain .storeBox p:nth-of-type(4) {
+        font-size: 15px; }
+      #store .storeMain .storeBox p:nth-of-type(5) {
+        width: 70px;
+        font-size: 13px;
+        margin-top: 4px;
+        text-align: center;
+        color: white;
+        background-color: #585858;
+        border: 1px solid #585858;
+        border-radius: 13px 13px 13px 13px; }
+      #store .storeMain .storeBox .back {
+        position: absolute;
+        top: 550px;
+        width: 100%;
+        height: 400px;
+        background-color: black;
+        opacity: 0.6; }
+      #store .storeMain .storeBox p:nth-of-type(n+6) {
+        position: absolute;
+        top: 550px;
+        color: white;
+        font-size: 22px;
+        width: 80%;
+        margin-left: 10%;
+        text-align: center; }
+    #store .storeMain .storeBox:nth-of-type(4n) {
+      margin-right: 0; }
+  #store .page {
+    clear: both;
+    width: 100%;
+    margin-top: 70px;
+    margin-bottom: 100px;
+    float: left; }
+    #store .page .paging {
+      text-align: center; }
+      #store .page .paging ul li {
+        display: inline-block; }
+        #store .page .paging ul li a {
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          border: 1px solid #bbbbbb;
+          border-right: 0;
+          line-height: 30px;
+          font-size: 18px;
+          cursor: pointer; }
+        #store .page .paging ul li a:hover {
+          background-color: #f1f1f1;
+          transition: background-color 0.2s; }
+        #store .page .paging ul li .on {
+          background-color: gray;
+          color: white; }
+        #store .page .paging ul li .on:hover {
+          background-color: gray;
+          color: white; }
+      #store .page .paging ul li:nth-last-child(1) a {
+        border-right: 1px solid #bbbbbb; }
+  @media (max-width: 1024px) {
+    #store > img {
+      height: 400px; }
+    #store .storeMain {
+      width: 96%;
+      margin-left: 2%; }
+      #store .storeMain .storeBox {
+        width: 49%; } }
+
+/*     storeView     */
+#storeView {
+  max-width: 1880px;
+  margin: 0 auto;
+  padding-bottom: 100px; }
+  #storeView .storeViewTop {
+    width: 90%;
+    height: 700px;
+    margin: 40px 0px 0px 5%; }
+    #storeView .storeViewTop .storeViewTopLeft {
+      float: left;
+      width: 40%;
+      height: 700px;
+      margin-right: 5%; }
+      #storeView .storeViewTop .storeViewTopLeft img {
+        width: 100%;
+        height: 700px; }
+    #storeView .storeViewTop .storeViewTopRight {
+      float: left;
+      width: 55%;
+      height: 700px;
+      border-top: 3px solid black;
+      border-bottom: 3px solid black;
+      /* select 시작 */ }
+      #storeView .storeViewTop .storeViewTopRight p {
+        float: left;
+        margin-top: 10px;
+        width: 100%; }
+      #storeView .storeViewTop .storeViewTopRight span {
+        float: left;
+        margin-top: 10px;
+        font-size: 17px; }
+      #storeView .storeViewTop .storeViewTopRight p:nth-of-type(1) {
+        height: 55px;
+        font-size: 25px;
+        border-bottom: 1px solid black;
+        margin-bottom: 40px; }
+      #storeView .storeViewTop .storeViewTopRight p:nth-of-type(n+2) {
+        width: 200px;
+        font-size: 17px; }
+      #storeView .storeViewTop .storeViewTopRight span:nth-of-type(1) {
+        text-decoration: line-through; }
+      #storeView .storeViewTop .storeViewTopRight p:nth-of-type(n+3) {
+        clear: both;
+        float: left; }
+      #storeView .storeViewTop .storeViewTopRight label {
+        float: left;
+        margin-top: 10px; }
+      #storeView .storeViewTop .storeViewTopRight input[type="radio"] {
+        float: left;
+        width: 15px;
+        height: 15px;
+        margin: 12px 20px 0px 5px; }
+      #storeView .storeViewTop .storeViewTopRight .border {
+        clear: both;
+        float: left;
+        width: 100%;
+        height: 30px;
+        border-bottom: 1px solid #bbbbbb; }
+      #storeView .storeViewTop .storeViewTopRight select {
+        float: left;
+        margin-top: 30px;
+        width: 150px; }
+      #storeView .storeViewTop .storeViewTopRight .sizeTable {
+        clear: both;
+        float: left;
+        margin-top: 25px; }
+        #storeView .storeViewTop .storeViewTopRight .sizeTable .th {
+          width: 360px; }
+          #storeView .storeViewTop .storeViewTopRight .sizeTable .th .tr {
+            float: left;
+            width: 120px; }
+          #storeView .storeViewTop .storeViewTopRight .sizeTable .th .tdBox {
+            clear: both;
+            float: left; }
+            #storeView .storeViewTop .storeViewTopRight .sizeTable .th .tdBox .td {
+              float: left;
+              width: 120px;
+              margin-top: 15px; }
+              #storeView .storeViewTop .storeViewTopRight .sizeTable .th .tdBox .td input[type="number"] {
+                width: 40px; }
+            #storeView .storeViewTop .storeViewTopRight .sizeTable .th .tdBox .td:nth-of-type(3) input[type="number"] {
+              width: 100px;
+              border: 0; }
+            #storeView .storeViewTop .storeViewTopRight .sizeTable .th .tdBox a {
+              cursor: pointer; }
+      #storeView .storeViewTop .storeViewTopRight .buyBox {
+        clear: both;
+        float: left;
+        width: 100%;
+        margin-top: 100px; }
+        #storeView .storeViewTop .storeViewTopRight .buyBox input[type="submit"] {
+          float: left;
+          width: 200px;
+          height: 40px;
+          border: 1px solid black;
+          background-color: white; }
+        #storeView .storeViewTop .storeViewTopRight .buyBox .allPrice {
+          float: right;
+          margin: 4px 8px 0px 0px;
+          text-align: right;
+          width: 20%;
+          height: 30px;
+          line-height: 30px;
+          font-size: 24px;
+          border: 0; }
+        #storeView .storeViewTop .storeViewTopRight .buyBox .submitButton {
+          transition: background-color 0.4s, color 0.4s; }
+        #storeView .storeViewTop .storeViewTopRight .buyBox .submitButton:hover {
+          color: white;
+          background-color: black; }
+        #storeView .storeViewTop .storeViewTopRight .buyBox span {
+          float: right;
+          text-decoration: none;
+          margin-top: 8px;
+          font-size: 22px; }
+  @media (max-width: 1024px) {
+    #storeView .storeViewTop {
+      width: 96%;
+      margin-left: 2%; }
+      #storeView .storeViewTop .storeViewTopLeft {
+        width: 100%; }
+      #storeView .storeViewTop .storeViewTopRight {
+        width: 100%; } }

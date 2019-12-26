@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <style>
+        html {
+            overflow-x: hidden;
+        }
+
+    </style>
+    <script>
+        $(document).ready(function() {
+
+            $(".box").hover(function() {
+                    $(this).find(".back").css("opacity", "0.5");
+                    $(this).find(".hidden").css("opacity", "1");
+                    $(this).find(".moreView").css("opacity", "1");
+                },
+                function() {
+                    $(this).find(".back").css("opacity", "0.2");
+                    $(this).find(".hidden").css("opacity", "0");
+                    $(this).find(".moreView").css("opacity", "0");
+                });
+
+            $(".newBox").hover(function() {
+                    $(this).find(".back").css("top", "0px");
+                    $(this).find("a").css("top", "120px");
+                    $(this).find("span").css("top", "190px");
+                },
+                function() {
+                    $(this).find(".back").css("top", "330px");
+                    $(this).find("a").css("top", "330px");
+                    $(this).find("span").css("top", "380px");
+                });
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="mainRotate">
+        </div>
+        <div class="mainTop">
+            <p>Neating is friendly</p>
+            <p>니팅의 친화적인 상품의 특징들을 만나보세요.</p>
+            <div class="mainBox">
+                <div class="box">
+                    <img src="image/mainImg/baby.jpg" alt="아기사진" />
+                    <div class="back"></div>
+                    <p>고급 면 재질</p>
+                    <p>민감한 피부에도 문제없는 고급 면 재질 확실히 다릅니다.</p>
+                    <p class="hidden">니팅의 제품들은 어린아이같이 민감한 피부를 가진 사람들에게 편안하고 부드러운 느낌을 주며 피부를 생각하는 고급 면 재질로 만들기에 만족도가 굉장히 높습니다.</p>
+                    <a class="moreView">더보기</a>
+                </div>
+                <div class="box">
+                    <img src="image/mainImg/dirty_boy.jpg" alt="장난치는아기사진" />
+                    <div class="back"></div>
+                    <p>내구성</p>
+                    <p>쉽게 더러워지지 않고 상하지 않는 내구성 좋은 재질 만나보세요.</p>
+                    <p class="hidden">어린 아이들이 옷을 더럽히거나 망가뜨리는게 고민일때, 니팅의 제품은 쉽게 상하지 않는 내구성 좋은 재질을 사용하기에 이러한 문제점을 보완합니다.</p>
+                    <a class="moreView">더보기</a>
+                </div>
+                <div class="box">
+                    <img src="image/mainImg/shirt.jpg" alt="깔끔한 셔츠사진" />
+                    <div class="back"></div>
+                    <p>상쾌함</p>
+                    <p>언제 입어도 깔끔하고 상쾌한 느낌을 주는 옷들을 경험해 보세요.</p>
+                    <p class="hidden">셔츠나 블라우스는 매일 아침 깔끔하지 않고 주름이 질까 걱정하셨다면, 저희 제품은 이러한 문제를 최대한 해결하여 언제 입어도 깔끔하고 상쾌한 느낌을 선사합니다.</p>
+                    <a class="moreView">더보기</a>
+                </div>
+                <div class="box">
+                    <img src="image/mainImg/Laundry.jpg" alt="세탁사진" />
+                    <div class="back"></div>
+                    <p>세탁성</p>
+                    <p>줄어들거나 주름이 생기지 않는 우수한 세탁성을 가진 옷들을 만나보세요.</p>
+                    <p class="hidden">세탁으로 인해 옷감이 상하고 주름이 생기고 옷이 작아지는 문제점들을 완벽히 보완하여 더이상 세탁으로 인해 생기는 고민과 스트레스를 날려버리는 니팅의 제품들을 만나보세요.</p>
+                    <a class="moreView">더보기</a>
+                </div>
+            </div>
+        </div>
+        <div class="mainBlackRotate">
+        </div>
+        <div class="mainSpecial">
+            <div class="mainSpeical_p">
+                <p>사용자별 특화 솔루션</p>
+                <p>Neating는 어린 아이부터 청소년, 직장인 그리고 어른신들까지 누구나 원하는 제품을 찾을 수 있는 수많은 제품과 사용자별 특화 솔루션을 제공합니다.</p>
+                <ul>
+                    <li><i class="fas fa-baby"></i>
+                        <p>영유아</p><a href="#">자세히 보기</a>
+                    </li>
+                    <li><i class="fas fa-child"></i>
+                        <p>유소년</p><a href="#">자세히 보기</a>
+                    </li>
+                    <li><i class="fas fa-male"></i>
+                        <p>남성</p><a href="#">자세히 보기</a>
+                    </li>
+                    <li><i class="fas fa-female"></i>
+                        <p>여성</p><a href="#">자세히 보기</a>
+                    </li>
+                    <li><i class="fas fa-user-tie"></i>
+                        <p>회사원</p><a href="#">자세히 보기</a>
+                    </li>
+                    <li><i class="fas fa-blind"></i>
+                        <p>어르신</p><a href="#">자세히 보기</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="mainWhiteRotate">
+        </div>
+        <div class="mainNews">
+            <p>"Neating은 매년 고객 만족도 1위를 기록하고 있으며 남겨주신 소중한 수 만개의 리뷰들을 언제나 적극적으로 검토하고 개선하여 더 나은 기업이 될 수 있도록 노력하고 있습니다."</p>
+
+            <div class="news">
+                <img src="image/mainShirt.jpg" alt="메인셔츠이미지" />
+                <div class="newsText">
+                    <p>고급 천연 섬유(Natural Fiber)</p>
+                    <p>고객님들의 피부와 만족도를 가장 먼저 사용하는 저희 Neating은 최고급 천연 섬유를 고객님들께서 부담감 없이 구입 하실 수 있도록 하기 위하여 직접 생산을 통해 비용 절감하고 있습니다.</p>
+                    <a>자세히 보기</a>
+                </div>
+            </div>
+
+            <p>최신 소식</p>
+            <p>Neating의 새로운 소식을 확인하세요</p>
+
+            <div class="newBox">
+                <img src="image/mainImg/newShirt.jpg" alt="새로운종류사진" />
+                <div class="back"></div>
+                <a>새로운 품목 추가</a>
+                <span>고객님이 더 만족하실 수 있도록 더 많은 품목을 추가했습니다.</span>
+            </div>
+            <div class="newBox">
+                <img src="image/mainImg/gift.jpg" alt="이벤트사진" />
+                <div class="back"></div>
+                <a>더 많은 이벤트</a>
+                <span>새로운 이벤트들로 고객님들께 더 많은 선물을 드립니다.</span>
+            </div>
+            <div class="newBox">
+                <img src="image/mainImg/accessory.jpg" alt="악세서리사진" />
+                <div class="back"></div>
+                <a>악세서리 항목 추가</a>
+                <span>원하시던 악세서리 항목을 추가하여 선택의 폭을 넓혔습니다.</span>
+            </div>
+            <div class="news newsBottom">
+                <img src="image/mainImg/manyShirt.jpg" alt="많은옷사진" />
+                <div class="newsText">
+                    <p>웰빙 디자인(Wellbeing Design)</p>
+                    <p>환경 파괴를 줄이고 환경 친화적인 제품을 만듭니다. 웰빙 디자인은 저자극을 기본으로 색, 재료, 조형 등 모든 영역에서 더 나은, 더 좋은 것들을 제공합니다. </p>
+                    <a>자세히 보기</a>
+                </div>
+            </div>
+        </div>
+        <div class="mainBlackRotate">
+        </div>
+        <div class="mainBottom">
+            <p>무엇이든 물어보세요</p>
+            <p>솔루션 문의부터 제품 문의, 일반문의까지 Neating이 도와드립니다.</p>
+            <a>문의하기</a>
+        </div>
+    </div>
+</body>
+
+</html>

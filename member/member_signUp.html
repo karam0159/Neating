@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    $(document).ready(function() {
+
+        $("#signUpForm").keyup(function() {
+            // 아이디 검증
+            var member_id = document.getElementById("member_id").value;
+            if (member_id.length < 8) {
+                document.getElementById("idCheck").innerHTML =
+                    "아이디는 8~13자 입니다.";
+                return false;
+            } else if (member_id.length >= 8 && member_id.length < 14) {
+                // 아이디 중복 처리도 해야함
+                document.getElementById("idCheck").innerHTML = "사용 가능합니다";
+                // 비밀번호 검증
+                var member_password = document.getElementById("member_password").value;
+                var member_passwordCheck = document.getElementById(
+                    "member_passwordCheck"
+                ).value;
+                // 비밀번호 정규식 8~16자 + 영문+숫자+특수문자
+                var passwordRules = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,16}$/;
+                if (passwordRules.test(member_password)) {
+                    if (member_password == member_passwordCheck) {
+                        document.getElementById("passwordCheck").innerHTML =
+                            "사용 가능합니다.";
+                        return true;
+                    } else {
+                        document.getElementById("passwordCheck").innerHTML =
+                            "비밀번호와 확인이 같지 않습니다.";
+                        return false;
+                    }
+                } else {
+                    document.getElementById("passwordCheck").innerHTML =
+                        "비밀번호는 8~16자 영문+숫자+특수문자입니다.";
+                    return false;
+                }
+            } else {
+                document.getElementById("idCheck").innerHTML =
+                    "아이디는 8~13자 입니다.";
+                return false;
+            }
+
+        });
+    });
+
+</script>
+
+<body>
+    <div class="wrapper">
+        <div class="member_signUp">
+            <p>
+                <i class="fas fa-user-friends"></i> 회원가입
+            </p>
+            <form action="oo.do" method="post" id="signUpForm" name="signUpForm" onsubmit="return formAllwrite()">
+                <a>
+                    <i class="fas fa-id-card"></i> ID
+                </a>
+                <span>아이디</span>
+                <div id="idCheck"></div>
+                <br />
+                <input type="text" name="member_id" id="member_id" placeholder="아이디 입력" />
+                <a>
+                    <i class="fas fa-lock"></i> PASSWORD
+                </a>
+                <span class="passSpan">비밀번호</span>
+                <div id="passwordCheck"></div>
+                <br />
+                <input type="password" name="member_password" id="member_password" placeholder="비밀번호 입력" required />
+                <a>
+                    <i class="fas fa-lock"></i> PASSWORD CHECK
+                </a>
+                <span class="passCheckSpan">비밀번호 확인</span>
+                <br />
+                <input type="password" name="member_passwordCheck" id="member_passwordCheck" placeholder="비밀번호 입력" required />
+                <a>
+                    <i class="fas fa-user"></i> NAME
+                </a>
+                <span>이름</span>
+                <br />
+                <input type="text" name="member_name" id="member_name" placeholder="이름 입력" required />
+                <a>
+                    <i class="fas fa-phone-square-alt"></i> TEL
+                </a>
+                <span>전화번호</span>
+                <br />
+                <input type="tel" name="member_tel" id="member_tel" placeholder="-제외하고 작성해주세요." required />
+                <a>
+                    <i class="far fa-calendar-alt"></i> DATE
+                </a>
+                <span>생년월일</span>
+                <br />
+                <input type="date" name="member_date" id="member_date" required />
+                <a>
+                    <i class="far fa-map"></i> ADDRESS
+                </a>
+                <span class="addressSpan">주소</span>
+                <br />
+                <input type="text" name="member_address" id="member_address" placeholder="주소 입력" required />
+                <input type="submit" id="submitButton" value="회원가입" />
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+        function formCheck(){
+            var member_id = document.getElementById("member_id").value;
+            if (member_id.length < 8) {
+                document.getElementById("idCheck").innerHTML =
+                    "아이디는 8~13자 입니다.";
+                return false;
+            } else if (member_id.length >= 8 && member_id.length < 14) {
+                // 아이디 중복 처리도 해야함
+                document.getElementById("idCheck").innerHTML = "사용 가능합니다";
+                // 비밀번호 검증
+                var member_password = document.getElementById("member_password").value;
+                var member_passwordCheck = document.getElementById(
+                    "member_passwordCheck"
+                ).value;
+                // 비밀번호 정규식 8~16자 + 영문+숫자+특수문자
+                var passwordRules = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,16}$/;
+                if (passwordRules.test(member_password)) {
+                    if (member_password == member_passwordCheck) {
+                        document.getElementById("passwordCheck").innerHTML =
+                            "사용 가능합니다.";
+                        return true;
+                    } else {
+                        document.getElementById("passwordCheck").innerHTML =
+                            "비밀번호와 확인이 같지 않습니다.";
+                        return false;
+                    }
+                } else {
+                    document.getElementById("passwordCheck").innerHTML =
+                        "비밀번호는 8~16자 영문+숫자+특수문자입니다.";
+                    return false;
+                }
+            } else {
+                document.getElementById("idCheck").innerHTML =
+                    "아이디는 8~13자 입니다.";
+                return false;
+            }
+        }
+        
+        function formAllwrite() {
+            if (document.getElementById("member_id").value == "") {
+                alert("아이디를 입력해주세요.");
+                return false;
+            }
+            if (document.getElementById("member_password").value == "") {
+                alert("비밀번호를 입력해주세요.");
+                return false;
+            }
+            if (document.getElementById("member_passwordCheck").value == "") {
+                alert("비밀번호 확인을 입력해주세요.");
+                return false;
+            }
+            if (document.getElementById("member_name").value == "") {
+                alert("이름을 입력해주세요.");
+                return false;
+            }
+            if (document.getElementById("member_tel").value == "") {
+                alert("전화번호를 입력해주세요.");
+                return false;
+            }
+            if (document.getElementById("member_date").value == "") {
+                alert("생년월일을 입력해주세요.");
+                return false;
+            }
+            if (document.getElementById("member_address").value == "") {
+                alert("주소를 입력해주세요.");
+                return false;
+            }
+            var TnF = formCheck();
+            console.log(TnF);
+            if (TnF == true) {
+                alert("회원가입 기능");
+                return true;
+            }
+            return false;
+        }
+    </script>
+</body>
+
+</html>

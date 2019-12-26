@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>쇼핑의 즐거움 Neating</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500&display=swap" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumBarunGothic@1.0/nanumbarungothicsubset.css">
+
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+
+    <link href="css/basic.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/cssReset.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/header.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/member.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/main.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/store.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/community.css" rel="stylesheet" type="text/css" media="all" />
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var getParameters = function(paramName) {
+                // 리턴값을 위한 변수 선언
+                var returnValue;
+
+                // 현재 URL 가져오기
+                var url = location.href;
+
+                // get 파라미터 값을 가져올 수 있는 ? 를 기점으로 slice 한 후 split 으로 나눔
+                var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
+
+                // 나누어진 값의 비교를 통해 paramName 으로 요청된 데이터의 값만 return
+                for (var i = 0; i < parameters.length; i++) {
+                    var varName = parameters[i].split('=')[0];
+                    if (varName.toUpperCase() == paramName.toUpperCase()) {
+                        returnValue = parameters[i].split('=')[1];
+                        return decodeURIComponent(returnValue);
+                    }
+                }
+            };
+            var page = getParameters('page');
+            if (page == null) {
+                page = "main.html";
+            }
+
+            $("#header").load("header.html"); // 원하는 파일 경로를 삽입하면 된다
+            $("#main").load(page); // 원하는 파일 경로를 삽입하면 된다
+            if (page != 'member/member_login.html') {
+                $("#footer").load("footer.html"); // 원하는 파일 경로를 삽입하면 된다
+            }
+
+
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div id="header"></div>
+        <div id="main"></div>
+        <div id="footer"></div>
+    </div>
+</body>
+
+</html>

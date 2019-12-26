@@ -1,0 +1,350 @@
+#store {
+    max-width:1880px;
+    margin:0 auto;
+
+    > img {
+        width: 100%;
+        height: 600px;
+    }
+
+    .storeMain {
+        width: 90%;
+        margin-left: 5%;
+
+        .storeBox {
+            position: relative;
+            float: left;
+            width: 24%;
+            height: 550px;
+            margin: 20px 1% 0px 0px;
+            cursor: pointer;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 400px;
+            }
+
+            a {
+                display: inline-block;
+                width: 100%;
+                border-bottom: 1px solid #bbbbbb;
+                height: 44px;
+                font-size: 15px;
+                text-align: left;
+            }
+
+            p {
+                width: 100%;
+                margin-top: 2px;
+                text-align: left;
+
+                > span {
+                    text-decoration: line-through;
+                }
+            }
+
+            p:nth-of-type(1),
+            p:nth-of-type(2) {
+                font-size: 14px;
+                color: gray;
+            }
+
+            p:nth-of-type(2) {
+                color: red;
+            }
+
+            p:nth-of-type(3) {
+                color: #585858;
+            }
+
+            p:nth-of-type(3),
+            p:nth-of-type(4) {
+                font-size: 15px;
+            }
+
+            p:nth-of-type(5) {
+                width: 70px;
+                font-size: 13px;
+                margin-top: 4px;
+                text-align: center;
+                color: white;
+                background-color: #585858;
+                border: 1px solid #585858;
+                border-radius: 13px 13px 13px 13px;
+            }
+
+            .back {
+                position: absolute;
+                top: 550px;
+                width: 100%;
+                height: 400px;
+                background-color: black;
+                opacity: 0.6;
+            }
+
+            p:nth-of-type(n+6) {
+                position: absolute;
+                top: 550px;
+                color: white;
+                font-size: 22px;
+                width: 80%;
+                margin-left: 10%;
+                text-align: center;
+            }
+        }
+
+        .storeBox:nth-of-type(4n) {
+            margin-right: 0;
+        }
+    }
+
+    .page {
+        clear: both;
+        width: 100%;
+        margin-top: 70px;
+        margin-bottom: 100px;
+        float: left;
+
+        .paging {
+            text-align: center;
+
+            ul {
+                li {
+                    display: inline-block;
+
+                    a {
+                        display: inline-block;
+                        width: 30px;
+                        height: 30px;
+                        border: 1px solid #bbbbbb;
+                        border-right: 0;
+                        line-height: 30px;
+                        font-size: 18px;
+                        cursor: pointer;
+                    }
+
+                    a:hover {
+                        background-color: #f1f1f1;
+                        transition: background-color 0.2s;
+                    }
+
+                    .on {
+                        background-color: gray;
+                        color: white;
+                    }
+
+                    .on:hover {
+                        background-color: gray;
+                        color: white;
+                    }
+                }
+
+                li:nth-last-child(1) {
+                    a {
+                        border-right: 1px solid #bbbbbb;
+                    }
+                }
+            }
+        }
+    }
+
+    @media(max-width:1024px) {
+        > img {
+            height: 400px;
+        }
+
+        .storeMain {
+            width: 96%;
+            margin-left: 2%;
+
+            .storeBox {
+                width: 49%;
+            }
+        }
+    }
+}
+
+
+/*     storeView     */
+
+#storeView {
+    max-width:1880px;
+    margin:0 auto;
+    padding-bottom:100px;
+
+    .storeViewTop {
+        width: 90%;
+        height: 700px;
+        margin: 40px 0px 0px 5%; 
+
+        .storeViewTopLeft {
+            float: left;
+            width: 40%;
+            height: 700px;
+            margin-right: 5%;
+
+            img {
+                width: 100%;
+                height: 700px;
+            }
+        }
+
+        .storeViewTopRight {
+            float: left;
+            width: 55%;
+            height: 700px;
+            border-top: 3px solid black;
+            border-bottom: 3px solid black;
+
+            p {
+                float: left;
+                margin-top: 10px;
+                width: 100%;
+            }
+
+            span {
+                float: left;
+                margin-top: 10px;
+                font-size: 17px;
+            }
+
+            p:nth-of-type(1) {
+                height: 55px;
+                font-size: 25px;
+                border-bottom: 1px solid black;
+                margin-bottom: 40px;
+            }
+
+            p:nth-of-type(n+2) {
+                width: 200px;
+                font-size: 17px;
+            }
+
+            span:nth-of-type(1) {
+                text-decoration: line-through;
+            }
+
+            p:nth-of-type(n+3) {
+                clear: both;
+                float: left;
+            }
+
+            label {
+                float: left;
+                margin-top: 10px;
+            }
+
+            input[type="radio"] {
+                float: left;
+                width: 15px;
+                height: 15px;
+                margin: 12px 20px 0px 5px;
+            }
+
+            .border {
+                clear: both;
+                float: left;
+                width: 100%;
+                height: 30px;
+                border-bottom: 1px solid #bbbbbb;
+            }
+
+            /* select 시작 */
+            select {
+                float: left;
+                margin-top: 30px;
+                width: 150px;
+            }
+
+            .sizeTable {
+                clear: both;
+                float: left;
+                margin-top: 25px;
+
+                .th {
+                    width: 360px;
+
+                    .tr {
+                        float: left;
+                        width: 120px;
+                    }
+
+                    .tdBox {
+                        clear: both;
+                        float: left;
+
+                        .td {
+                            float: left;
+                            width: 120px;
+                            margin-top: 15px;
+
+                            input[type="number"] {
+                                width: 40px;
+                            }
+                        }
+                        .td:nth-of-type(3)
+                        {
+                            input[type="number"] {
+                                width: 100px;
+                                border:0;
+                            }
+                        }
+                        a{
+                            cursor:pointer;
+                        }
+                    }
+                }
+            }
+
+            .buyBox {
+                clear: both;
+                float: left;
+                width: 100%;
+                margin-top: 100px;
+
+                input[type="submit"] {
+                    float: left;
+                    width: 200px;
+                    height: 40px;
+                    border: 1px solid black;
+                    background-color: white;
+                }
+
+                .allPrice {
+                    float: right;
+                    margin: 4px 8px 0px 0px;
+                    text-align: right;
+                    width: 20%;
+                    height: 30px;
+                    line-height: 30px;
+                    font-size: 24px;
+                    border: 0;
+                }
+                .submitButton{
+                    transition: background-color 0.4s, color 0.4s;
+                }
+                .submitButton:hover{
+                    color:white;
+                    background-color:black;
+                }
+                
+                span {
+                    float: right;
+                    text-decoration: none;
+                    margin-top: 8px;
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+    @media(max-width:1024px){
+        .storeViewTop {
+            width:96%;
+            margin-left:2%;
+            .storeViewTopLeft {width:100%;}
+            .storeViewTopRight {width:100%;}
+        }
+        
+    }
+}

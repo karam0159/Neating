@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            // nav hover 일때 슬라이드 다운
+            $('.headerNavDiv').not(".loginBox").hover(function() {
+
+                    $('.slideDown').stop().animate({
+                        height: '350px'
+                    }, 400);
+                    $('.slideDown').css('border-bottom', '1px solid black');
+                },
+                function() {
+                    $('.slideDown').stop().animate({
+                        height: '0px'
+                    }, 400);
+
+                    $('.slideDown').css('height', '0');
+                    $('.slideDown').css('border-bottom', '0px solid black');
+                });
+
+            $(".loginBox").hover(function() {
+                    $('.slideDown').css('display', 'none');
+                },
+                function() {
+                    $('.slideDown').css('height', '0');
+                    $('.slideDown').css('border-bottom', '0px solid black');
+                    $('.slideDown').css('display', 'block');
+                });
+
+            // 서치버튼 클릭시 슬라이드 다운
+            $(".searchImage").click(function() {
+                if ($('.searchBox').hasClass('a')) {
+                    $('.searchBox').stop().animate({
+                        height: '0px'
+                    }, 400);
+                    $('.searchBox').removeClass('a');
+                    $('.searchBox').css('border-bottom', '1px solid black');
+                } else {
+                    $('.searchBox').stop().animate({
+                        height: '350px'
+                    }, 400);
+                    $('.searchBox').addClass('a');
+                    $('.searchBox').css('border-bottom', '1px solid black');
+                }
+            });
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="headerNavDiv">
+                <div class="headerNavDiv_p">
+                    <a href="index.html"><img src="image/logo2.png" alt="사이트로고" /></a>
+                    <ul class="headerNav">
+                        <li><a href="index.html?page=store/store.html">BEST</a></li>
+                        <li><a href="#">TOPS</a></li>
+                        <li><a href="#">BOTTOMS</a></li>
+                        <li><a href="#">SHOES</a></li>
+                        <li><a href="index.html?page=community/QnA.html">COMMUNITY</a></li>
+                    </ul>
+                    <ul class="loginBox">
+                        <li><a href="index.html?page=member/member_login.html">로그인</a></li>
+                        <li class="searchImage">
+                            <a><img src="image/search_cut.png" alt="검색이미지" style="cursor:pointer" /></a>
+                        </li>
+                        <li class="mobileMenu"><a><img src="image/mobileNavButton.png" alt="모바일메뉴" /></a></li>
+                    </ul>
+                </div>
+                <div class="slideDownMenu">
+                    <div class="slideDown">
+                        <div class="slideDown_p">
+                            <ul><a href="#">BEST</a>
+                                <li><a href="#">Tops</a></li>
+                                <li><a href="#">Bottoms</a></li>
+                                <li><a href="#">Shoes</a></li>
+                            </ul>
+                            <ul><a href="#">TOPS</a>
+                                <li><a href="#">T_Shirt</a></li>
+                                <li><a href="#">Blouse</a></li>
+                                <li><a href="#">Neat</a></li>
+                                <li><a href="#">Hood</a></li>
+                                <li><a href="#">Training</a></li>
+                            </ul>
+                            <ul><a href="#">BOTTOMS</a>
+                                <li><a href="#">Shorts</a></li>
+                                <li><a href="#">Skirts</a></li>
+                                <li><a href="#">Crops</a></li>
+                                <li><a href="#">Leggings</a></li>
+                                <li><a href="#">Pants</a></li>
+                            </ul>
+                            <ul><a href="#">SHOES</a>
+                                <li><a href="#">Sneakers</a></li>
+                                <li><a href="#">Shoes</a></li>
+                                <li><a href="#">High Heel</a></li>
+                                <li><a href="#">Running Shoes</a></li>
+                            </ul>
+                            <ul><a href="#">COMMUNITY</a>
+                                <li><a href="#">Q & A</a></li>
+                                <li><a href="#">Review</a></li>
+                                <li><a href="#">Event</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="searchBox">
+                <form>
+                    <input type="search" name="goods_name" placeholder="상품이름을 입력해주세요" />
+                    <input type="image" src="image/search_cut.png" style="width:50px; height:50px;" />
+                </form>
+                <ul>
+                    <li><a href="#">너무 예쁜 흰색 블라우스</a></li>
+                    <li><a href="#">쫀득 쫀득한 1자 청바지</a></li>
+                    <li><a href="#">러블리한 분위기의 니트티</a></li>
+                </ul>
+            </div>
+
+            <div style="border-bottom:1px solid gray; width:100%; height:70px;"></div>
+
+        </div>
+    </div>
+</body>
+
+</html>

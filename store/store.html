@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script>
+    var k = "";
+    var images = ["../image/store/storeImage/2/1.jpg", "../image/store/storeImage/3/1.jpg", "../image/store/storeImage/3/4.jpg",
+        "../image/store/storeImage/4/2.jpg", "../image/store/storeImage/4/3.jpg",
+        "../image/store/storeImage/5/1.jpg", "../image/store/storeImage/6/1.jpg",
+        "../image/store/storeImage/7/1.jpg"
+    ];
+    var titles = ["가성비 좋은 깔끔 남성용 셔츠", "부들부들한 면 재질의 가성비 검은색 마크티",
+        "찰떡처럼 쫀쫀한 주황주황한 골지 슬림 티셔츠", "특양면 기모안감의 부드러운 느낌의 청자켓",
+        "따뜻 부드러운 도톰 스웨이드원단의 청자켓", "가성비 좋고 깔끔한 아웃캐스트 마크 흰티",
+        "도톰하고 따뜻한 루즈핏 깔끔한 흰티", "부드러운 감촉의 사랑스런 주황색 티셔츠"
+    ];
+    var pay = [34000, 24100, 25000, 78000, 66000, 21000, 22500, 27000];
+    var size = ["90~105", "90~110", "95~105", "95~110", "95~110", "90~100", "90~100", "90~105"];
+    var viewPage = ["index.html?page=store/storeView.html", "#", "#", "#", "#", "#", "#", "#"];
+    var content = ["셔츠", "티셔츠", "티셔츠", "자켓", "자켓", "티셔츠", "티셔츠", "티셔츠"];
+    var sales = [5, 3, 3, 5, 6, 3, 4, 5];
+    var review = [22, 16, 25, 61, 16, 21, 31, 12];
+
+    for (i = 0; i < 8; i++) {
+        k = "<div class='storeBox' onclick=location.href='" + viewPage[i] + "'>";
+        k += "<img src='" + images[i] + "' alt='상품이미지'/>";
+        k += "<a>" + titles[i] + "</a>";
+        k += "<p>FREE SIZE:" + size[i] + " </a>";
+        k += "<p>(" + sales[i] + "%할인) </a>";
+        k += "<p>판매가: <span>₩" + pay[i] + "원</span></a>";
+        k += "<p>할인판매가: ₩" + (pay[i]-(pay[i]*(sales[i]*0.01))) + "원</a>";
+        k += "<p>리뷰 :"+review[i]+"</p>";
+        k += "<div class='back'></div>"
+        k += "<p class='content'>타입 : " + content[i] + "</p>";
+        k += "<p class='sales'>세일 : " + sales[i] + "%</p>";
+        k += "<p class='review'>리뷰 : " + review[i] + " 개</p>";
+        k += "</div>";
+        $(".storeMain").append(k);
+    }
+    var startPage = 1;
+    var endPage = 7;
+    var nowPage = 1;
+    var page = "";
+
+    page = "<div class='page'>";
+    page += "<div class='paging'>";
+    page += "<ul>";
+    page += "<li><a><i class='fas fa-angle-left'></i></a></li>";
+    for (i = startPage; i <= endPage; i++) {
+        if (i == nowPage) {
+            page += "<li>";
+            page += "<a class='on'>" + i + "</a>";
+            page += "</li>";
+        } else {
+            page += "<li>";
+            page += "<a>" + i + "</a>";
+            page += "</li>";
+        }
+    }
+    page += "<li><a><i class='fas fa-angle-right'></i></a></li>";
+    page += "</ul>";
+    page += "</div>";
+    page += "</div>";
+
+    $(".storeMain").append(page);
+
+</script>
+
+<body>
+    <div id="store">
+        <img src="../image/main/main1.jpg" alt="메인이미지" />
+        <div class="storeMain">
+
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function() {
+
+        $(".storeBox").hover(function() {
+                $(this).find(".back").css("top", "0px");
+                $(this).find(".content").css("top", "100px");
+                $(this).find(".sales").css("top", "180px");
+                $(this).find(".review").css("top", "260px");
+            },
+            function() {
+                $(this).find(".back").css("top", "550px");
+                $(this).find(".content").css("top", "550px");
+                $(this).find(".sales").css("top", "550px");
+                $(this).find(".review").css("top", "550px");
+            });
+
+    });
+
+</script>
+
+</html>
