@@ -20,7 +20,6 @@
     var pay = [34000, 24100, 25000, 78000, 66000, 21000, 22500, 27000];
     var size = ["90~105", "90~110", "95~105", "95~110", "95~110", "90~100", "90~100", "90~105"];
     var viewPage = ["index.html?page=store/storeView.html", "#", "#", "#", "#", "#", "#", "#"];
-    var content = ["셔츠", "티셔츠", "티셔츠", "자켓", "자켓", "티셔츠", "티셔츠", "티셔츠"];
     var sales = [5, 3, 3, 5, 6, 3, 4, 5];
     var review = [22, 16, 25, 61, 16, 21, 31, 12];
 
@@ -33,10 +32,6 @@
         k += "<p>판매가: <span>₩" + pay[i] + "원</span></a>";
         k += "<p>할인판매가: ₩" + (pay[i]-(pay[i]*(sales[i]*0.01))) + "원</a>";
         k += "<p>리뷰 :"+review[i]+"</p>";
-        k += "<div class='back'></div>"
-        k += "<p class='content'>타입 : " + content[i] + "</p>";
-        k += "<p class='sales'>세일 : " + sales[i] + "%</p>";
-        k += "<p class='review'>리뷰 : " + review[i] + " 개</p>";
         k += "</div>";
         $(".storeMain").append(k);
     }
@@ -71,30 +66,12 @@
 
 <body>
     <div id="store">
-        <img src="../image/main/main1.jpg" alt="메인이미지" />
+        <img src="image/main/main1.jpg" alt="메인이미지" />
         <div class="storeMain">
 
         </div>
     </div>
 </body>
-<script>
-    $(document).ready(function() {
 
-        $(".storeBox").hover(function() {
-                $(this).find(".back").css("top", "0px");
-                $(this).find(".content").css("top", "100px");
-                $(this).find(".sales").css("top", "180px");
-                $(this).find(".review").css("top", "260px");
-            },
-            function() {
-                $(this).find(".back").css("top", "550px");
-                $(this).find(".content").css("top", "550px");
-                $(this).find(".sales").css("top", "550px");
-                $(this).find(".review").css("top", "550px");
-            });
-
-    });
-
-</script>
 
 </html>
